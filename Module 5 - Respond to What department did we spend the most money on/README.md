@@ -194,5 +194,5 @@ Optional: Feel free to change Alexa's speech output in the Code tab and test to 
 If your skill isn't working or you're getting some kind of syntax error, download the following working code sample. Go to the Code tab in the Alexa developer console and copy and paste the code into the index.js file. Be sure to save and deploy the code before testing it.
 
 - Code for this module ([5-index.js](5-index.js))
-- Interaction Model for this module - Same as Module 4 ([5-en-us.json](/Module%204%20-%20Add%20new%20intent%20-%20MoneyMetricsIntent/4-en-us.json))
+- Interaction Model for this module - Same as Module 4 ([4-en-us.json](/Module%204%20-%20Add%20new%20intent%20-%20MoneyMetricsIntent/4-en-us.json))
 
