@@ -134,7 +134,7 @@ Optional: Feel free to change Alexa's speech output in the Code tab and test to 
 
 ### Congratulations! You have finished Module 4!
 
-[![](http://ajotwani.s3.amazonaws.com/ask-workshop/images/5.png)](/Module%205%20-%20Respond%20to%20"What%20department%20did%20we%20spend%20the%20most%20money%20on"/README.md)
+[![](http://ajotwani.s3.amazonaws.com/ask-workshop/images/5.png)](/Module%205%20-%20Respond%20to%20What%20department%20did%20we%20spend%20the%20most%20money%20on/README.md)
 
 ---
 
