@@ -81,7 +81,7 @@ const MoneyMetricsIntentHandler = {
 				var unique_departments = all_departments.filter( onlyUnique );
 				console.log(unique_departments.length);
 
-				//CREATE AN ARRAY CONTAINING THE DEPARTMMENTS, AND TOTAL AMOUNT SPENT BY EACH UNIQUE DEPARTMENT
+				//CREATE AN ARRAY CONTAINING THE DEPARTMENTS, AND TOTAL AMOUNT SPENT BY EACH UNIQUE DEPARTMENT
 				var checkbook = [];
 
 				unique_departments.forEach(function(department, i) {

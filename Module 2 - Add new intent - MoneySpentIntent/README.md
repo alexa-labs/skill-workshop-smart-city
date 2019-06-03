@@ -21,7 +21,7 @@ After completing this workshop, you will be able to:
   	- Collect Slot Values - helper functions
   	- Keep the session open by adding a reprompt to LaunchRequestHandler
   	- Respond back with placeholder speech of - "You asked for {department} in {year}. Let's find the data in the next step by querying the Las Vegas Open Data API"
-		- Update the response inside HelpIntentHandler to inform the customers about the new functioanlity.
+		- Update the response inside HelpIntentHandler to inform the customers about the new functionality.
 3. **Part 3: Test your voice interaction**
 
 ---
@@ -194,7 +194,7 @@ We'll now test your skill in the Developer Portal. Here you can test an entire c
 
 1. In the menu at top of the page, click **Test**.
 2. In Alexa Simulator tab, under Type or click…, type "**open smart city**"
-3. You should hear and see Alexa respond with the message in your LaunchRequest - *Welcome to the Las Vegas Smart City Checkbook Skill. What would you like to know?*. Note that it also keeps the session open, and encourages you to continue the conversation. This is because we uncommented the `.reprompt()` statment in our `LaunchRequestHandler` in Part 2 above.
+3. You should hear and see Alexa respond with the message in your LaunchRequest - *Welcome to the Las Vegas Smart City Checkbook Skill. What would you like to know?*. Note that it also keeps the session open, and encourages you to continue the conversation. This is because we uncommented the `.reprompt()` statement in our `LaunchRequestHandler` in Part 2 above.
 4. Now, type "**how much money did we spend on fire services in 2019**". This utterance should trigger our new intent handler for "MoneySpentIntent", and generate the following response -
 
 	*"You asked for amount of money spent on fire services in 2019. Let's find the data in the next step by querying the Las Vegas Open Data API"*
