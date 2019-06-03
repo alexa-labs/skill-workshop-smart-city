@@ -188,7 +188,7 @@ Optional: Feel free to change Alexa's speech output in the Code tab and test to 
 
 ### Congratulations! You have finished Module 5!
 
-[![](http://ajotwani.s3.amazonaws.com/ask-workshop/images/6.png)](/Module%206%20-%20Add%20“AMAZON.Repeat”%20built-in%20Intent/README.md)
+[![](http://ajotwani.s3.amazonaws.com/ask-workshop/images/6.png)](/Module%206%20-%20Add%20AMAZON.Repeat%20built-in%20Intent/README.md)
 
 ## Code for this module
 If your skill isn't working or you're getting some kind of syntax error, download the following working code sample. Go to the Code tab in the Alexa developer console and copy and paste the code into the index.js file. Be sure to save and deploy the code before testing it.
