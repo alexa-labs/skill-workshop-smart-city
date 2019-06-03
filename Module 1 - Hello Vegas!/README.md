@@ -102,10 +102,13 @@ const LaunchRequestHandler = {
 ```
 6. **Enable Logging:** Before we test our skill, let's add one more functionality that will help us debug our code in the following modules. We will add a custom logging function called debugLog that we can turn on/off at our discretion.
 
+Add the debug flag on the line following the import of the ASK SDK. 
 ```js
-var debugMode = true;
+const Alexa = require('ask-sdk-core');
+var debugMode = true; // <-- add this line
 ```
 
+Directly before the `exports.handler = Alexa.SkillBuilders.custom()` section, create this helper function. We'll be adding more to this section later in the workshop.
 ```js
 //HELPER FUNCTIONS
 

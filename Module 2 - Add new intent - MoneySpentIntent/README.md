@@ -29,7 +29,7 @@ After completing this workshop, you will be able to:
 ## Part 1: Update Interaction Model
 
 1. In the **left navigation menu** on the left, choose **JSON Editor**.
-2. **Copy/Paste** the language model JSON from [en-us.json](2-en-us.json) into this editor.
+2. **Copy/Paste** the language model JSON from the starting [2-start-en-us.json](2-start-en-us.json) into this editor.
 
   > Each of these JSON fields are Intents. Intents represent what your skill can do, they are an action Alexa will take. To prompt Alexa for the action, a user would say an Utterance. Each intent has various utterances acting as training data for Alexa to understand the context of the action. Alexa responds in a different way for each intent.
 

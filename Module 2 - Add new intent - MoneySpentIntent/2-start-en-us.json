@@ -1,0 +1,98 @@
+{
+  "interactionModel": {
+      "languageModel": {
+          "invocationName": "smart city",
+          "intents": [
+              {
+                  "name": "AMAZON.CancelIntent",
+                  "samples": []
+              },
+              {
+                  "name": "AMAZON.HelpIntent",
+                  "samples": []
+              },
+              {
+                  "name": "AMAZON.StopIntent",
+                  "samples": []
+              },
+              {
+                  "name": "AMAZON.NavigateHomeIntent",
+                  "samples": []
+              },
+              {
+                  "name": "MoneySpentIntent",
+                  "slots": [
+                      {
+                          "name": "department",
+                          "type": "Department"
+                      },
+                      {
+                          "name": "year",
+                          "type": "AMAZON.DATE"
+                      }
+                  ],
+                  "samples": [
+                      "How much money was spent on {department} in {year}",
+                      "How much money did we spend on {department} in  {year} "
+                  ]
+              }
+          ],
+          "types": [
+              {
+                  "name": "Department",
+                  "values": [
+                      {
+                          "name": {
+                              "value": "all departments"
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "fire services"
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "planning and development",
+                              "synonyms": [
+                                  "development",
+                                  "planning"
+                              ]
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "human resources"
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "public works"
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "city wide"
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "community services"
+                          }
+                      },
+                      {
+                          "name": {
+                              "value": "operations and maintenance",
+                              "synonyms": [
+                                  "maintenance",
+                                  "operations",
+                                  "operations and maintenance"
+                              ]
+                          }
+                      }
+                  ]
+              }
+          ]
+      }
+  }
+}
