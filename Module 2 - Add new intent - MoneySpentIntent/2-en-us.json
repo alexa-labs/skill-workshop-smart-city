@@ -41,7 +41,10 @@
                     ],
                     "samples": [
                         "How much money was spent on {department} in {year}",
-                        "How much money did we spend on {department} in  {year} "
+                        "How much money did we spend on {department} in {year}",
+                        "How much money was spent on {department} {year}",
+                        "tell me the money spent on {department} in {year}",
+                        "give me the checkbook for {department} in {year}"
                     ]
                 }
             ],
