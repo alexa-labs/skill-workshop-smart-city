@@ -46,15 +46,15 @@ No updates to the interaction model required for this module.
 
 ## Part 2: Update Code
 
-1. Include the "HTTPS" module. Paste the code below just under  `const Alexa = require('ask-sdk-core');` at the top of the file
+**Step 3.2.1.** Include the "HTTPS" module. Paste the code below just under  `const Alexa = require('ask-sdk-core');` at the top of the file
 
-	```js
-	const Alexa = require('ask-sdk-core');
-	var https = require('https'); //<- Add this
-	var debugMode = true;
-	```
+```js
+const Alexa = require('ask-sdk-core');
+var https = require('https'); //<- Add this
+var debugMode = true;
+```
 
-2. Update the code inside `MoneySpentIntentHandler` to make the API call to Las Vegas Open Checkbook API to get total amount of money spent on a given department and year provided by the customer using the slot values we collected in the previous module.
+**Step 3.2.2.** Update the code inside `MoneySpentIntentHandler` to make the API call to Las Vegas Open Checkbook API to get total amount of money spent on a given department and year provided by the customer using the slot values we collected in the previous module.
 
 This is what `MoneySpentIntentHandler` should look like after the updates.
 
@@ -96,10 +96,10 @@ const MoneySpentIntentHandler = {
 	},
 };
 ```
-	> #### Syntax Error?
-	> Note that you may receive a syntax error if you try to save the code at this point. This is normal, and will be fixed as you copy the code blocks that follow in the next few steps.
+> #### Syntax Error?
+> Note that you may receive a syntax error if you try to save the code at this point. This is normal, and will be fixed as you copy the code blocks that follow in the next few steps.
 
-3. Add the helper function `httpGetByDepartment` that makes the HTTP Get request to the API under "Helper Functions" section
+**Step 3.2.3.** Add the helper function `httpGetByDepartment` that makes the HTTP Get request to the API under "Helper Functions" section
 
 ```js
 function httpGetByDepartment(slotValues) {
@@ -137,18 +137,21 @@ function httpGetByDepartment(slotValues) {
 }
 ```
 
-4. Click **Save**, and then **Deploy**
+**Step 3.2.4.** Click **Save**, and then **Deploy**
 
 ## Part 3: Test your voice interaction
 
 We'll now test your skill in the Developer Portal. Here you can test an entire customer interaction with the built-in Alexa simulator.
 
-1. In the menu at top of the page, click **Test**.
-2. In Alexa Simulator tab, under Type or click…, type "open smart city"
-3. You should hear and see Alexa respond with the message in your LaunchRequest.
-5. Now, type "how much money did we spend on fire services this year". This utterance should trigger our intent handler for "MoneySpentIntent", then make a call to the API, and generate a response like -
+**Step 3.3.1.** In the menu at top of the page, click **Test**.
 
-	"*In 2019, $1203385.22 was spent on fire services*"
+**Step 3.3.2.** In Alexa Simulator tab, under Type or click…, type "open smart city"
+
+**Step 3.3.3.** You should hear and see Alexa respond with the message in your LaunchRequest.
+
+**Step 3.3.4.** Now, type "how much money did we spend on fire services this year". This utterance should trigger our intent handler for "MoneySpentIntent", then make a call to the API, and generate a response like -
+
+"*In 2019, $1203385.22 was spent on fire services*"
 
 Optional: Feel free to change Alexa's speech output in the Code tab and test to see the direct output!
 

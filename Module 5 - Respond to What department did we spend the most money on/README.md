@@ -46,10 +46,11 @@ No updates to the interaction model required for this module.
 
 ## Part 2: Update Code
 
-1. Select the **Code tab** in the top menu.
-2. Make the API call to Las Vegas Open Checkbook API from within the `MoneySpentIntentHandler` to get total amount of money spent on a given department and year provided by the customer using the slot values we collected in the previous module.
+**Step 5.2.1.** Select the **Code tab** in the top menu.
 
-2. Update the code inside `MoneyMetricsIntentHandler` to make the API call to Las Vegas Open Checkbook API to get total amount of money spent on a given department and year provided by the customer using the slot values we collected in the previous module. We will then sort this result, to get the departments that spent the least, and most money in a given year.
+**Step 5.2.2.** Make the API call to Las Vegas Open Checkbook API from within the `MoneySpentIntentHandler` to get total amount of money spent on a given department and year provided by the customer using the slot values we collected in the previous module.
+
+**Step 5.2.3.** Update the code inside `MoneyMetricsIntentHandler` to make the API call to Las Vegas Open Checkbook API to get total amount of money spent on a given department and year provided by the customer using the slot values we collected in the previous module. We will then sort this result, to get the departments that spent the least, and most money in a given year.
 
 This is what `MoneyMetricsIntentHandler` should look like after the updates.
 
@@ -130,10 +131,10 @@ const MoneyMetricsIntentHandler = {
 };
 ```
 
-	> #### Syntax Error?
-	> Note that you may receive a syntax error if you try to save the code at this point. This is normal, and will be fixed as you copy the code blocks that follow in the next few steps.
+> #### Syntax Error?
+> Note that you may receive a syntax error if you try to save the code at this point. This is normal, and will be fixed as you copy the code blocks that follow in the next few steps.
 
-3. Add the helper function `httpGetByYear` that makes the HTTP Get request to the API under "Helper Functions" section
+**Step 5.2.4.** Add the helper function `httpGetByYear` that makes the HTTP Get request to the API under "Helper Functions" section
 
 ```js
 function httpGetByYear(slotValues) {
@@ -169,7 +170,7 @@ function httpGetByYear(slotValues) {
 }
 ```
 
-4. Add `onlyUnique` helper function, which helps us get the unique department names from the data returned by the API.
+**Step 5.2.5.** Add `onlyUnique` helper function, which helps us get the unique department names from the data returned by the API.
 
 ```js
 function onlyUnique(value, index, self) {
@@ -177,18 +178,21 @@ function onlyUnique(value, index, self) {
 }
 ```
 
-5. Click **Save**, and then **Deploy**
+**Step 5.2.6.** Click **Save**, and then **Deploy**
 
 ## Part 3: Test your voice interaction
 
 We'll now test your skill in the Developer Portal. Here you can test an entire customer interaction with the built-in Alexa simulator.
 
-1. In the menu at top of the page, click **Test**.
-2. In Alexa Simulator tab, under Type or click…, type "open smart city"
-3. You should hear and see Alexa respond with the message in your LaunchRequest.
-5. Now, type "what department did we spend the most money on last year". This utterance should trigger our intent handler for "MoneyMetricsIntent", then make a call to the API, and generate a response like -
+**Step 5.3.1.** In the menu at top of the page, click **Test**.
 
-	"*In 2018, the most money was spent in the {department_name} department, with a total of {amount}.*"
+**Step 5.3.2.** In Alexa Simulator tab, under Type or click…, type "open smart city"
+
+**Step 5.3.3.** You should hear and see Alexa respond with the message in your LaunchRequest.
+
+**Step 5.3.4.** Now, type "what department did we spend the most money on last year". This utterance should trigger our intent handler for "MoneyMetricsIntent", then make a call to the API, and generate a response like -
+
+"*In 2018, the most money was spent in the {department_name} department, with a total of {amount}.*"
 
 Optional: Feel free to change Alexa's speech output in the Code tab and test to see the direct output!
 

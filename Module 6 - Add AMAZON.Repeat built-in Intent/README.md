@@ -21,18 +21,23 @@ After completing this workshop, you will be able to:
 ---
 ## Part 1: Update Interaction Model
 
-1. Click the **Build** tab
-2. To the right of Intents, click **Add**. The "Add Intent" window opens.
-3. Select **Use an existing intent from Alexa's built-in library** and type "repeat" to filter down the intents.
-4. Choose **AMAZON.RepeatIntent** to add the intent.
-5. Click **Save Model**, and then **Build Model**
+**Step 6.1.1.** Click the **Build** tab
+
+**Step 6.1.2.** To the right of Intents, click **Add**. The "Add Intent" window opens.
+
+**Step 6.1.3.** Select **Use an existing intent from Alexa's built-in library** and type "repeat" to filter down the intents.
+
+**Step 6.1.4.** Choose **AMAZON.RepeatIntent** to add the intent.
+
+**Step 6.1.5.** Click **Save Model**, and then **Build Model**
 
 ---
 
 ## Part 2: Update Code
 
-1. Select the **Code tab** in the top menu.
-2. Update `MoneySpentIntentHandler` to save the last speech response to session attributes. Copy the code below and paste it inside the `MoneySpentIntentHandler`
+**Step 6.2.1.** Select the **Code tab** in the top menu.
+
+**Step 6.2.2.** Update `MoneySpentIntentHandler` to save the last speech response to session attributes. Copy the code below and paste it inside the `MoneySpentIntentHandler`
 
 ```js
 //Saving last speech response in session attributes
@@ -93,7 +98,7 @@ const MoneySpentIntentHandler = {
 };
 ```
 
-3. Add new intent handler for AMAZON.RepeatIntent under 'MoneyMetricsIntentHandler', to respond back with the last response speech.
+**Step 6.2.3.** Add new intent handler for AMAZON.RepeatIntent under 'MoneyMetricsIntentHandler', to respond back with the last response speech.
 
 ```js
 const RepeatIntentHandler = {
@@ -114,7 +119,7 @@ const RepeatIntentHandler = {
 };
 ```
 
-3. Add `RepeatIntentHandler,` to exports.handler (note the comma at the end of it). Your exports.handler should look like the following -
+**Step 6.2.4.** Add `RepeatIntentHandler,` to exports.handler (note the comma at the end of it). Your exports.handler should look like the following -
 
 
 ```js
@@ -133,18 +138,23 @@ exports.handler = Alexa.SkillBuilders.custom()
 	.lambda();
 ```
 
-4. Click **Save**, and then **Deploy**
+**Step 6.2.5.** Click **Save**, and then **Deploy**
 
 ## Part 3: Test your voice interaction
 
 We'll now test your skill in the Developer Portal. Here you can test an entire customer interaction with the built-in Alexa simulator.
 
-1. In the menu at top of the page, click **Test**.
-2. In Alexa Simulator tab, under Type or click…, type "**open smart city**"
-3. You should hear and see Alexa respond with the message in your LaunchRequest.
-4. Now, type "**what department did we spend the most money on last year**". This utterance should trigger our new intent handler for "MoneyMetricsIntent", and give us the data by calling the API.
-5. Now, type - "**repeat that**"
-6. Your skill should now repeat the last response
+**Step 6.3.1.** In the menu at top of the page, click **Test**.
+
+**Step 6.3.2.** In Alexa Simulator tab, under Type or click…, type "**open smart city**"
+
+**Step 6.3.3.** You should hear and see Alexa respond with the message in your LaunchRequest.
+
+**Step 6.3.4.** Now, type "**what department did we spend the most money on last year**". This utterance should trigger our new intent handler for "MoneyMetricsIntent", and give us the data by calling the API.
+
+**Step 6.3.5.** Now, type - "**repeat that**"
+
+**Step 6.3.6.** Your skill should now repeat the last response
 
 ### Congratulations! You have finished Modules 1-6!
 How about some Extra Credit eh? See below.
