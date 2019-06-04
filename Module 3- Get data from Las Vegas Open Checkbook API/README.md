@@ -46,17 +46,17 @@ No updates to the interaction model required for this module.
 
 ## Part 2: Update Code
 
-1. Include the "HTTPS" module
-
+1. Include the "HTTPS" module. Paste the code below just under  `const Alexa = require('ask-sdk-core');` at the top of the file
 
 	```js
-	var https = require('https');
+	const Alexa = require('ask-sdk-core');
+	var https = require('https'); //<- Add this
+	var debugMode = true;
 	```
 
-2. Make the API call to Las Vegas Open Checkbook API from within the `MoneySpentIntentHandler` to get total amount of money spent on a given department and year provided by the customer using the slot values we collected in the previous module.
+2. Update the code inside `MoneySpentIntentHandler` to make the API call to Las Vegas Open Checkbook API to get total amount of money spent on a given department and year provided by the customer using the slot values we collected in the previous module.
 
-	> #### Syntax Error?
-	> Note that you may receive a syntax error if you try to save the code at this point. This is normal, and will be fixed as you copy the code blocks that follow in the next few steps.
+This is what `MoneySpentIntentHandler` should look like after the updates.
 
 ```js
 const MoneySpentIntentHandler = {
@@ -96,8 +96,10 @@ const MoneySpentIntentHandler = {
 	},
 };
 ```
+	> #### Syntax Error?
+	> Note that you may receive a syntax error if you try to save the code at this point. This is normal, and will be fixed as you copy the code blocks that follow in the next few steps.
 
-3. Add the helper function that makes the HTTP Get request to the API under "Helper Functions" section
+3. Add the helper function `httpGetByDepartment` that makes the HTTP Get request to the API under "Helper Functions" section
 
 ```js
 function httpGetByDepartment(slotValues) {

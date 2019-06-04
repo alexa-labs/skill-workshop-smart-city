@@ -49,8 +49,10 @@ No updates to the interaction model required for this module.
 1. Select the **Code tab** in the top menu.
 2. Make the API call to Las Vegas Open Checkbook API from within the `MoneySpentIntentHandler` to get total amount of money spent on a given department and year provided by the customer using the slot values we collected in the previous module.
 
-	> #### Syntax Error?
-	> Note that you may receive a syntax error if you try to save the code at this point. This is normal, and will be fixed as you copy the code blocks that follow in the next few steps.
+2. Update the code inside `MoneyMetricsIntentHandler` to make the API call to Las Vegas Open Checkbook API to get total amount of money spent on a given department and year provided by the customer using the slot values we collected in the previous module. We will then sort this result, to get the departments that spent the least, and most money in a given year.
+
+This is what `MoneyMetricsIntentHandler` should look like after the updates.
+
 
 ```js
 const MoneyMetricsIntentHandler = {
@@ -128,7 +130,10 @@ const MoneyMetricsIntentHandler = {
 };
 ```
 
-3. Add the helper function that makes the HTTP Get request to the API under "Helper Functions" section
+	> #### Syntax Error?
+	> Note that you may receive a syntax error if you try to save the code at this point. This is normal, and will be fixed as you copy the code blocks that follow in the next few steps.
+
+3. Add the helper function `httpGetByYear` that makes the HTTP Get request to the API under "Helper Functions" section
 
 ```js
 function httpGetByYear(slotValues) {
@@ -164,7 +169,7 @@ function httpGetByYear(slotValues) {
 }
 ```
 
-4. Add other helper functions
+4. Add `onlyUnique` helper function, which helps us get the unique department names from the data returned by the API.
 
 ```js
 function onlyUnique(value, index, self) {

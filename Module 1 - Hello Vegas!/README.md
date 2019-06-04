@@ -16,7 +16,7 @@ After completing this workshop, you will be able to:
 
 
 2. Click **Create Skill** on the right-hand side of the console. A new page displays.
-	
+
 	![](http://ajotwani.s3.amazonaws.com/ask-workshop/images/0-create-skill.png)
 
 3. In the Skill name field, enter **Smart City**
@@ -30,7 +30,7 @@ After completing this workshop, you will be able to:
 
 6. Under Choose a method to host your skill's backend resources, select **Alexa-Hosted**.
 
-	![](http://ajotwani.s3.amazonaws.com/ask-workshop/images/3-create-skill.png)	
+	![](http://ajotwani.s3.amazonaws.com/ask-workshop/images/3-create-skill.png)
 
 	> Skills have a front end and backend. The front end is where you map utterances (what the user says) into an intent (the desired action). You must decide how to handle the user's intent in the backend. Host the skill yourself using an AWS Lambda function or HTTPS endpoint, or choose Alexa to host the skill for you. There are limits to the AWS Free Tier, so if your skill goes viral, you may want to move to the self-hosted option. For this course, use Alexa-Hosted.
 
@@ -74,7 +74,7 @@ The intent of opening the skill is built into the experience (`LaunchRequest`), 
 
 2. Within the `handle()` function, find the line that begins const `speechText`. This variable contains the string of words the skill should say back to the user when they launch the skill. Let's change what it says to make sense for this skill.
 
-3. Within the LaunchRequestHandler object, find the handle() function, and the line that begins const speechText. Replace that line with the following:
+3. **Update code for LaunchRequestHandler**: Within the LaunchRequestHandler object, find the handle() function, and the line that begins const speechText. Replace that line with the following:
 
 	```js
 	const speechText = 'Hello! Welcome to Las Vegas Smart City Skill. Goodbye!';
@@ -84,7 +84,7 @@ The intent of opening the skill is built into the experience (`LaunchRequest`), 
 
 5. Next, look for the `.getResponse()` function just below the line you commented out in the `LaunchRequestHandler`. This converts the responseBuilder's work into the response that the skill will return. Think of it like hitting a "send" button — it sends the response.
 
-	After making all of these changes, your code in the handle() function within the LaunchRequestHandler should look like the following:
+	**Final code for LaunchRequestHandler**: After making all of these changes, your code in the handle() function within the LaunchRequestHandler should look like the following:
 
 ```js
 const LaunchRequestHandler = {
@@ -102,7 +102,7 @@ const LaunchRequestHandler = {
 ```
 6. **Enable Logging:** Before we test our skill, let's add one more functionality that will help us debug our code in the following modules. We will add a custom logging function called debugLog that we can turn on/off at our discretion.
 
-Add the debug flag on the line following the import of the ASK SDK. 
+Add the debug flag on the line following the import of the ASK SDK. Paste the code below just under  `const Alexa = require('ask-sdk-core');` at the top of the file
 ```js
 const Alexa = require('ask-sdk-core');
 var debugMode = true; // <-- add this line

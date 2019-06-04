@@ -58,7 +58,7 @@ After completing this workshop, you will be able to:
 		- **{amount_type}**
 
 
-	![](http://ajotwani.s3.amazonaws.com/ask-workshop/images/required-slot.png)
+	![](http://ajotwani.s3.amazonaws.com/ask-workshop/images/required-slot-2.png)
 
 12. **Repeat the process to make "year" required as well. You can use the following prompts:**
 	- Under "Alexa speech prompts", type - **what year would you like to get the information for?**, and then hit **enter**
@@ -73,10 +73,9 @@ After completing this workshop, you will be able to:
 ## Part 2: Update Code
 
 1. Select the Code tab in the top menu.
-2. Add new intent handler for MoneyMetricsIntent, and respond back with placeholder speech of - *"You asked what department did we spend the {least/most} money on. Let's find the data in the next step by querying the Las Vegas Open Data API"*
+2. **Add new intent handler for MoneyMetricsIntent**, and respond back with placeholder speech of - *"You asked what department did we spend the {least/most} money on. Let's find the data in the next step by querying the Las Vegas Open Data API"*
 
-	> #### Syntax Error?
-	> Note that you may receive a syntax error if you try to save the code at this point. This is normal, and will be fixed as you copy the code blocks that follow in the next few steps.
+**Add code for MoneyMetricsIntentHandler**: Copy the code below, and paste just under MoneySpentIntentHandler.
 
 ```js
 const MoneyMetricsIntentHandler = {
@@ -105,18 +104,21 @@ const MoneyMetricsIntentHandler = {
 };
 ```
 
-3. Add the new intent handler to exports.handler
+> #### Syntax Error?
+	> Note that you may receive a syntax error if you try to save the code at this point. This is normal, and will be fixed as you copy the code blocks that follow in the next few steps.
+
+3. Add `MoneyMetricsIntentHandler,` to exports.handler (note the comma at the end of it). Your exports.handler should look like the following -
 
 ```js
 exports.handler = Alexa.SkillBuilders.custom()
 	.addRequestHandlers(
 		LaunchRequestHandler,
 		MoneySpentIntentHandler,
-		MoneyMetricsIntentHandler,
+		MoneyMetricsIntentHandler, //<-- Add this
 		HelpIntentHandler,
 		CancelAndStopIntentHandler,
 		SessionEndedRequestHandler,
-		IntentReflectorHandler) // make sure IntentReflectorHandler is last so it doesn't override your custom intent handlers
+		IntentReflectorHandler)
 	.addErrorHandlers(
 		ErrorHandler)
 	.lambda();

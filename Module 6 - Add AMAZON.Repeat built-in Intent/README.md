@@ -32,7 +32,7 @@ After completing this workshop, you will be able to:
 ## Part 2: Update Code
 
 1. Select the **Code tab** in the top menu.
-2. Update `MoneyMetricsIntentHandler` to save the last speech response to session attributes.
+2. Update `MoneySpentIntentHandler` to save the last speech response to session attributes. Copy the code below and paste it inside the `MoneySpentIntentHandler`
 
 ```js
 //Saving last speech response in session attributes
@@ -47,7 +47,53 @@ return handlerInput.responseBuilder
 	},
 ```
 
-3. Add new intent handler for AMAZON.RepeatIntent, and respond back with the last response speech.
+This is what `MoneySpentIntentHandler` should look like after the updates - 
+
+```js
+const MoneySpentIntentHandler = {
+	canHandle(handlerInput) {
+		const request = handlerInput.requestEnvelope.request;
+		return request.type === 'IntentRequest'
+      && request.intent.name === 'MoneySpentIntent';
+	},
+	async handle(handlerInput) {
+		const filledSlots = handlerInput.requestEnvelope.request.intent.slots;
+		const slotValues = getSlotValues(filledSlots);
+		let speechText;
+		debugLog('slot values',slotValues);
+
+		try {
+			const response = await httpGetByDepartment(slotValues);
+			debugLog('Response from API Call',JSON.stringify(response));
+			debugLog('response.length',response.length);
+
+			if (response.length > 0) {
+				let expenditureSum = response.reduce((total, expenditure) => total + expenditure.transaction_amount * 1, 0);
+				speechText = `So in ${slotValues.year.resolved}, $${expenditureSum.toFixed(2)} was spent on ${slotValues.department.resolved}`;
+			} else {
+				speechText = `I am sorry I could not find any info
+            for ${slotValues.department.resolved} spending in
+            ${slotValues.year.resolved}.`;
+			}
+		} catch (error) {
+			speechText = 'I am really sorry. I am unable to access part of my memory. Please try again later';
+			console.log(`Intent: ${handlerInput.requestEnvelope.request.intent.name}: message: ${error.message}`);
+		}
+
+		//Saving last speech response in session attributes
+		let sessionAttributes = handlerInput.attributesManager.getSessionAttributes();
+		sessionAttributes.last_response = speechText;
+		handlerInput.attributesManager.setSessionAttributes(sessionAttributes);
+
+		return handlerInput.responseBuilder
+			.speak(speechText)
+			.reprompt('What would you like?')
+			.getResponse();
+	},
+};
+```
+
+3. Add new intent handler for AMAZON.RepeatIntent under 'MoneyMetricsIntentHandler', to respond back with the last response speech.
 
 ```js
 const RepeatIntentHandler = {
@@ -68,7 +114,8 @@ const RepeatIntentHandler = {
 };
 ```
 
-3. Add the new intent handler to exports.handler
+3. Add `RepeatIntentHandler,` to exports.handler (note the comma at the end of it). Your exports.handler should look like the following -
+
 
 ```js
 exports.handler = Alexa.SkillBuilders.custom()
@@ -80,7 +127,7 @@ exports.handler = Alexa.SkillBuilders.custom()
 		HelpIntentHandler,
 		CancelAndStopIntentHandler,
 		SessionEndedRequestHandler,
-		IntentReflectorHandler) // make sure IntentReflectorHandler is last so it doesn't override your custom intent handlers
+		IntentReflectorHandler)
 	.addErrorHandlers(
 		ErrorHandler)
 	.lambda();

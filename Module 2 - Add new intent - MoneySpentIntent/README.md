@@ -70,6 +70,8 @@ After completing this workshop, you will be able to:
 	> #### Syntax Error?
 	> Note that you may receive a syntax error if you try to save the code at this point. This is normal, and will be fixed as you copy the code blocks that follow in the next few steps.
 
+	**Add code for MoneySpentIntentHandler**: Copy the code below, and paste just under the LaunchRequestHandler.
+
 ```js
 const MoneySpentIntentHandler = {
 	canHandle(handlerInput) {
@@ -91,23 +93,23 @@ const MoneySpentIntentHandler = {
 };
 ```
 
-3. Add the new intent handler to exports.handler
+3. Add `MoneySpentIntentHandler,` to exports.handler (note the comma at the end of it). Your exports.handler should look like the following -
 
 ```js
 exports.handler = Alexa.SkillBuilders.custom()
 	.addRequestHandlers(
 		LaunchRequestHandler,
-		MoneySpentIntentHandler,
+		MoneySpentIntentHandler, //<-- Add this
 		HelpIntentHandler,
 		CancelAndStopIntentHandler,
 		SessionEndedRequestHandler,
-		IntentReflectorHandler) // make sure IntentReflectorHandler is last so it doesn't override your custom intent handlers
+		IntentReflectorHandler)
 	.addErrorHandlers(
 		ErrorHandler)
 	.lambda();
 ```
 
-4. Collect Slot Values using the `getSlotValues` helper function
+4. **Add the `getSlotValues` helper function under the "HELPER FUNCTIONS" section**, just before the exports.handler function. This helper function will help us parse the JSON request we receive from Alexa, and check the slot values the customer provided, so we can use them to respond accordingly.
 
 ```js
 function getSlotValues(filledSlots) {
@@ -153,7 +155,7 @@ function getSlotValues(filledSlots) {
 }
 ```
 
-5. Keep the session open by adding a reprompt to LaunchRequestHandler
+5. Update the response for LaunchRequestHandler, and remove the // we added before .reprompt() in the last module. This will allow us to keep the session open, and allow customers to engage in a dialog with our skill. This is what the `LaunchRequestHandler` should look like after the updates.
 
 ```js
 const LaunchRequestHandler = {
@@ -161,7 +163,7 @@ const LaunchRequestHandler = {
 		return handlerInput.requestEnvelope.request.type === 'LaunchRequest';
 	},
 	handle(handlerInput) {
-		const speechText = 'Welcome to the Las Vegas Smart City Checkbook Skill. What would you like to know?';
+				const speechText = 'Welcome to the Las Vegas Smart City Checkbook Skill. You can ask how much money was spent by the City of Las Vegas on a department in a certain year. For example, you can say how much money was spent on fire services in 2018. What would you like to know?';
 		return handlerInput.responseBuilder
 			.speak(speechText)
 			.reprompt(speechText)
@@ -170,7 +172,7 @@ const LaunchRequestHandler = {
 };
 ```
 
-6. Update the HelpIntentHandler
+6. Update the response for `HelpIntentHandler`
 
 ```js
 const HelpIntentHandler = {
