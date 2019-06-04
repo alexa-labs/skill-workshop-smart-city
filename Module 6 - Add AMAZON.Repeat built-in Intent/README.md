@@ -150,7 +150,7 @@ We'll now test your skill in the Developer Portal. Here you can test an entire c
 
 **Step 6.3.3.** You should hear and see Alexa respond with the message in your LaunchRequest.
 
-**Step 6.3.4.** Now, type "**what department did we spend the most money on last year**". This utterance should trigger our new intent handler for "MoneyMetricsIntent", and give us the data by calling the API.
+**Step 6.3.4.** Now, type "**how much money did we spend on fire services last year**". This utterance should trigger our new intent handler for "MoneyMetricsIntent", and give us the data by calling the API.
 
 **Step 6.3.5.** Now, type - "**repeat that**"
 
