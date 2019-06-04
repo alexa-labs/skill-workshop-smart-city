@@ -27,7 +27,7 @@ After completing this workshop, you will be able to:
 
 1. Make an HTTP GET request to an external API
 2. Use the slots as part of the API call
-3. Parse the the data returned by an API, and use that to respond back to the user with a response like "In {year}, the least/most money was spent in the{department}, with a total of {amount_spent}.";
+3. Parse the the data returned by an API, and use that to respond back to the user with a response like "In {year}, the least/most money was spent in the {department}, with a total of {amount_spent}.";
 
 
 ### Overview of what we will be doing in this module
@@ -36,7 +36,7 @@ After completing this workshop, you will be able to:
 2. **Part 2: Update Code**
 	- Make the API call to get data for the year requested by the customer, passing type of query (least amount/most amount), and year as parameters.
 	- Build the response using the data returned by the API
-	- Respond back with "In {year}, the least/most money was spent in the{department}, with a total of {amount_spent}."
+	- Respond back with "In {year}, the least/most money was spent in the {department}, with a total of {amount_spent}."
 3. **Part 3: Test your voice interaction**
 
 ---
@@ -180,7 +180,7 @@ We'll now test your skill in the Developer Portal. Here you can test an entire c
 1. In the menu at top of the page, click **Test**.
 2. In Alexa Simulator tab, under Type or click…, type "open smart city"
 3. You should hear and see Alexa respond with the message in your LaunchRequest.
-5. Now, type "what department did we spend the most money on in 2018". This utterance should trigger our intent handler for "MoneyMetricsIntent", then make a call to the API, and generate a response like -
+5. Now, type "what department did we spend the most money on last year". This utterance should trigger our intent handler for "MoneyMetricsIntent", then make a call to the API, and generate a response like -
 
 	"*In 2018, the most money was spent in the POLICE SERVICES department, with a total of $11854155.*"
 
