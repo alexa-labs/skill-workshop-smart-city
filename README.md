@@ -4,11 +4,11 @@
 Imagine being able to look at every single data point your city generates, and creating compelling applications from that data. This workshop will introduce you to the [Las Vegas Open Checkbook API](https://opendata.lasvegasnevada.gov/Finance/City-of-Las-Vegas-Checkbook-Data/7erj-ndzx), and show you how to build a voice application with Alexa that consumes that data, and takes a unique look at just how interactive our future can be.
 
 ### What you will learn in this workshop
-- Alexa Skills Kit
-- Alexa Hosted Skills
-- Intents (Built-in and Custom), Utterances, and Slots
-- ASK NodeJS SDK
+- Create a new skill using the Alexa Skills Kit Developer Console
+- Configure Intents (Built-in and Custom) and Sample Utterances, and slots.
+- Configure the backend for your skill using Alexa Skills Kit (Node.js) & Alexa Hosted Skills
 - Making an external API call to get data from Las Vegas Open Checkbook API
+- Test a skill using the Alexa Testing Simulator and an Echo device.
 
 ## Overview
 
