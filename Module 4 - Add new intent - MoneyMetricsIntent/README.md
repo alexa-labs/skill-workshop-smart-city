@@ -1,5 +1,5 @@
 # Module 4: Add the second intent (MoneyMetricsIntent)
-In this module, you will add a new intent (MoneyMetricsIntent), and use that to respond back to the customer utterance -  *"what department did we spend the {type: least/most} money on?”:*, collecting the type of query (least/most) from the customer as inputs (we call these slots).
+In this module, you will add a new intent (MoneyMetricsIntent), and use that to respond back to the customer utterance -  *"what department did we spend the {type: least/most} money on?":*, collecting the type of query (least/most) from the customer as inputs (we call these slots).
 
 ### Objectives
 After completing this workshop, you will be able to:
@@ -23,8 +23,6 @@ After completing this workshop, you will be able to:
 ---
 ## Part 1: Update Interaction Model
 
-<!--Check if you want to use this here. Came from Module 2.-->
-
 1. Click the **Build** tab
 2. To the right of "Slot Types", click **Add**. The Add Slot Type window opens.
 3. Select **Create custom slot type** and enter the following text for the name of the slot type: **AmountType**
@@ -41,6 +39,9 @@ After completing this workshop, you will be able to:
 9. In the Sample Utterances field, type the following, and then press ENTER or click the + icon:
 	- What department was the {amount_type} expensive in {year}
 	- What department did we spend the {amount_type} money on in {year}
+
+	> In addition to adding the sample utterance, it will create the slots as well.
+
 10. Under the "Intent Slots" section, click the dropdown for each slot to choose the "Slot Type" for the two slots - department, and year.
 	- amount_type -> Slot Type = AmountType
 	- year -> Slot Type = AMAZON.DATE

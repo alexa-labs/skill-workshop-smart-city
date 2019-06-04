@@ -144,7 +144,7 @@ We'll now test your skill in the Developer Portal. Here you can test an entire c
 1. In the menu at top of the page, click **Test**.
 2. In Alexa Simulator tab, under Type or click…, type "open smart city"
 3. You should hear and see Alexa respond with the message in your LaunchRequest.
-5. Now, type "how much money did we spend on fire services in 2019". This utterance should trigger our intent handler for "MoneySpentIntent", then make a call to the API, and generate a response like -
+5. Now, type "how much money did we spend on fire services this year". This utterance should trigger our intent handler for "MoneySpentIntent", then make a call to the API, and generate a response like -
 
 	"*In 2019, $1203385.22 was spent on fire services*"
 
