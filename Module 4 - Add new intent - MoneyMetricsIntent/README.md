@@ -127,7 +127,7 @@ We'll now test your skill in the Developer Portal. Here you can test an entire c
 1. In the menu at top of the page, click **Test**.
 2. In Alexa Simulator tab, under Type or click…, type "open smart city"
 3. You should hear and see Alexa respond with the message in your LaunchRequest.
-4. Now, type "what department did we spend the most money on". This utterance should trigger our new intent handler for "MoneyMetricsIntent", and generate the following response -
+4. Now, type "what department did we spend the most money on". This utterance should trigger slot elicitation for the year, then trigger our new intent handler for "MoneyMetricsIntent", and generate the following response -
 
 *"You asked what department did we spend the most money on. Let's find the data in the next step by querying the Las Vegas Open Data API"*
 
