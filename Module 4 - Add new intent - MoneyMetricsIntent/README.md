@@ -52,7 +52,11 @@ After completing this workshop, you will be able to:
 	- Click on the slot **amount_type** under MoneyMetricsIntent on the left navigation.
 	- Under "Slot Filling", turn on "Is this slot required to fulfill the intent?"
 	- Under "Alexa speech prompts", type - **Would you like to get the information for most money spent or least money spent?**, and then hit **enter**
-	- Under "User utterances", type - **department that spent {amount_type} money** and **tell me about  {amount_type} money**, and **{amount_type}**, hitting enter each time.
+	- Under "User utterances", type the following, hitting enter each time -
+		- **department that spent {amount_type} money**
+		- **tell me about  {amount_type} money**
+		- **{amount_type}**
+
 
 	![](http://ajotwani.s3.amazonaws.com/ask-workshop/images/required-slot.png)
 

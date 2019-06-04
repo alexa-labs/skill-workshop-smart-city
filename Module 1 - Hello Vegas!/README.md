@@ -52,15 +52,15 @@ The intent of opening the skill is built into the experience (`LaunchRequest`), 
 
 ### There are **two** pieces to a handler
 > 1. canHandle() function
-
+>
 > 2. handle() function
-
+>
 > The **canHandle()** function is where you define what requests the handler responds to.
-
+>
 > The **handle()** function returns a response to the user.
-
+>
 > If your skill receives a request, the canHandle() function within each handler determines whether or not that handler can service the request.
-
+>
 > In this case, the user wants to launch the skill, which is a LaunchRequest. Therefore, the canHandle() function within the LaunchRequestHandler will let the SDK know it can fulfill the request. In computer terms, the canHandle returns true to confirm it can do the work.
 
 

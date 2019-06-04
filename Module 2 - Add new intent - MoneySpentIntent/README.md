@@ -28,32 +28,35 @@ After completing this workshop, you will be able to:
 
 ## Part 1: Update Interaction Model
 
-1. In the **left navigation menu** on the left, choose **JSON Editor**.
-2. **Copy/Paste** the language model JSON from the starting [2-start-en-us.json](2-start-en-us.json) into this editor.
+1. Click the **Build** tab
+2. In the **left navigation menu** on the left, choose **JSON Editor**.
+3. **Copy/Paste** the language model JSON from the starting [2-start-en-us.json](2-start-en-us.json) into this editor.
 
   > Each of these JSON fields are Intents. Intents represent what your skill can do, they are an action Alexa will take. To prompt Alexa for the action, a user would say an Utterance. Each intent has various utterances acting as training data for Alexa to understand the context of the action. Alexa responds in a different way for each intent.
 
-5. Click the **Save Model** button. This will start the process of creating your interaction (If you did not make changes in the Code Editor the Save Model button is gray).
-6. Click on the **MoneySpentIntent** on the **left menu**. You are now in a UI where you can incorporate more sample utterances for your custom intent. Add each of the following utterances individually:
+4. Click the **Save Model** button. This will start the process of creating your interaction (If you did not make changes in the Code Editor the Save Model button is gray).
+5. Click on the **MoneySpentIntent** on the **left menu**. You are now in a UI where you can incorporate more sample utterances for your custom intent. Add each of the following utterances individually:
 
 	- tell me the money spent on {department} in {year}
 	- give me the checkbook for {department} in {year}
 
   > Notice that the text does not include punctuation.
 
-7. Since we need the department and year to get the information, we will use Auto Delegation to ensure that our skill guides the customer to collect these values from them before trying to fulfil the request.
+6. Since we need the department and year to get the information, we will use Auto Delegation to ensure that our skill guides the customer to collect these values from them before trying to fulfil the request.
 	- Click on the slot **department** under MoneySpentIntent on the left navigation.
 	- Under "Slot Filling", turn on "Is this slot required to fulfill the intent?"
 	- Under "Alexa speech prompts", type - **What department would you like to get the information for. You can say fire services, operations and maintenance, or planning and development?**, and then hit **enter**
-	- Under "User utterances", type - **tell me about {department}** and **{department}**, hitting enter each time
+	- Under "User utterances", type the following, hitting enter each time -
+		- **tell me about {department}**
+		- **{department}**
 
 	![](http://ajotwani.s3.amazonaws.com/ask-workshop/images/required-slot.png)
 
-8. **Repeat the process to make "year" required as well. You can use the following prompts:**
+7. **Repeat the process to make "year" required as well. You can use the following prompts:**
 	- Under "Alexa speech prompts", type - **what year would you like to get the information for?**, and then hit **enter**
 	- Under "User utterances", type - **tell me about {year}** and **{year}**, hitting enter each time
 
-9. **Save Model**, and then click on **Build Model**
+8. **Save Model**, and then click on **Build Model**
 
 ---
 
@@ -77,7 +80,7 @@ const MoneySpentIntentHandler = {
 	async handle(handlerInput) {
 		const filledSlots = handlerInput.requestEnvelope.request.intent.slots;
 		const slotValues = getSlotValues(filledSlots);
-		let speechText = `You asked for amount of money spent on ${slotValues.department.resolved} in ${slotValues.year.resolved}. Let's find the data in the next step by querying the Las Vegas Open Data API`;
+		let speechText = `You asked for the amount of money spent on ${slotValues.department.resolved} in ${slotValues.year.resolved}. Let's find the data in the next step by querying the Las Vegas Open Data API`;
 		debugLog('slot values',slotValues);
 
 		return handlerInput.responseBuilder
@@ -197,7 +200,7 @@ We'll now test your skill in the Developer Portal. Here you can test an entire c
 3. You should hear and see Alexa respond with the message in your LaunchRequest - *Welcome to the Las Vegas Smart City Checkbook Skill. What would you like to know?*. Note that it also keeps the session open, and encourages you to continue the conversation. This is because we uncommented the `.reprompt()` statement in our `LaunchRequestHandler` in Part 2 above.
 4. Now, type "**how much money did we spend on fire services this year**". This utterance should trigger our new intent handler for "MoneySpentIntent", and generate the following response -
 
-	*"You asked for amount of money spent on fire services in 2019. Let's find the data in the next step by querying the Las Vegas Open Data API"*
+	*"You asked for the amount of money spent on fire services in 2019. Let's find the data in the next step by querying the Las Vegas Open Data API"*
 
 	***Optional:*** Feel free to change Alexa's speech output in the Code tab and test to see the direct output!
 

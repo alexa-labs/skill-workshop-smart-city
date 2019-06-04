@@ -46,6 +46,7 @@ No updates to the interaction model required for this module.
 
 ## Part 2: Update Code
 
+1. Select the **Code tab** in the top menu.
 2. Make the API call to Las Vegas Open Checkbook API from within the `MoneySpentIntentHandler` to get total amount of money spent on a given department and year provided by the customer using the slot values we collected in the previous module.
 
 	> #### Syntax Error?
@@ -182,7 +183,7 @@ We'll now test your skill in the Developer Portal. Here you can test an entire c
 3. You should hear and see Alexa respond with the message in your LaunchRequest.
 5. Now, type "what department did we spend the most money on last year". This utterance should trigger our intent handler for "MoneyMetricsIntent", then make a call to the API, and generate a response like -
 
-	"*In 2018, the most money was spent in the POLICE SERVICES department, with a total of $11854155.*"
+	"*In 2018, the most money was spent in the {department_name} department, with a total of {amount}.*"
 
 Optional: Feel free to change Alexa's speech output in the Code tab and test to see the direct output!
 

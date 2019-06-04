@@ -100,7 +100,7 @@ We'll now test your skill in the Developer Portal. Here you can test an entire c
 6. Your skill should now repeat the last response
 
 ### Congratulations! You have finished Modules 1-6!
-How about some Extra Credits eh? See below.
+How about some Extra Credit eh? See below.
 
 ---
 
@@ -112,9 +112,9 @@ If your skill isn't working or you're getting some kind of syntax error, downloa
 
 ---
 
-### Extra Credits
+### Extra Credit
 
 1. Add the repeat functionality for `MoneySpentIntentHandler` as well. Hint: Use [Response Interceptors](https://developer.amazon.com/blogs/alexa/post/0e2015e1-8be3-4513-94cb-da000c2c9db0/what-s-new-with-request-and-response-interceptors-in-the-alexa-skills-kit-sdk-for-node-js) to avoid duplicating code.
 2. [Add Memory to your skill](https://developer.amazon.com/alexa-skills-kit/courses/cake-walk-5)
-3. **Add SSML, Sound Effects, and Amazon Polly:** In every interaction of your skill, you will create a more immersive experience for your customer by integrating SSML, Sound Effects, and Amazon Polly to the voice responses.
+3. **Add SSML, Sound Effects, and Amazon Polly:** In every interaction of your skill, you will create a more immersive experience for your customer by integrating [SSML](https://developer.amazon.com/docs/custom-skills/speech-synthesis-markup-language-ssml-reference.html), Sound Effects, and [Amazon Polly](https://developer.amazon.com/docs/custom-skills/speech-synthesis-markup-language-ssml-reference.html#voice) to the voice responses.
 4. **Make Money with In-Skill Purchasing**: Your customer will be able to purchase premium content within your skill, making their experience more delightful and surprising. Here's a ["Hello World" code sample](https://github.com/alexa/skill-sample-nodejs-premium-hello-world) to get started with.

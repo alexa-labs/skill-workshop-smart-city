@@ -29,14 +29,14 @@ In this module, you will add a new intent (MoneyMetricsIntent), and use that to 
 ### Module 5: Respond to utterance "What department did we spend the most money on"
 In this module, you will replace the placeholder response in the last module with actual data returned by calling the [Las Vegas Open Checkbook API](https://opendata.lasvegasnevada.gov/Finance/City-of-Las-Vegas-Checkbook-Data/7erj-ndzx), and including the year, and type of query (least amount/most amount) we received from the customer as parameters while queuing the API.
 
-## Module 6: Repeat the last response by using “AMAZON.RepeatIntent” - a built-in intent provided by Amazon
+### Module 6: Repeat the last response by using “AMAZON.RepeatIntent” - a built-in intent provided by Amazon
 In this module, you will add a built-in intent - AMAZON.RepeatIntent. It is one of the many standard built-in intents that lets the user request to repeat the last action. So, our skill will be able to respond back to the utterance “can you repeat that”, “what was that again” etc.
 
 [![](http://ajotwani.s3.amazonaws.com/ask-workshop/images/1.png)](/Module%201%20-%20Hello%20Vegas!/README.md)
 
 ---
 
-### Extra Credits
+### Extra Credit
 
 1. [Add Memory to your skill](https://developer.amazon.com/alexa-skills-kit/courses/cake-walk-5)
 2. **Add SSML, Sound Effects, and Amazon Polly:** In every interaction of your skill, you will create a more immersive experience for your customer by integrating SSML, Sound Effects, and Amazon Polly to the voice responses.

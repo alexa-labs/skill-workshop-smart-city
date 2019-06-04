@@ -25,7 +25,7 @@ const MoneySpentIntentHandler = {
 	async handle(handlerInput) {
 		const filledSlots = handlerInput.requestEnvelope.request.intent.slots;
 		const slotValues = getSlotValues(filledSlots);
-		let speechText = `You asked for amount of money spent on ${slotValues.department.resolved} in ${slotValues.year.resolved}. Let's find the data in the next module by querying the Las Vegas Open Data API`;
+		let speechText = `You asked for the amount of money spent on ${slotValues.department.resolved} in ${slotValues.year.resolved}. Let's find the data in the next module by querying the Las Vegas Open Data API`;
 		debugLog('slot values',slotValues);
 
 		return handlerInput.responseBuilder
