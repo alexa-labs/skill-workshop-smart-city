@@ -1,0 +1,409 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "smart city",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "MoneySpentIntent",
+                    "slots": [
+                        {
+                            "name": "department",
+                            "type": "Department",
+                            "samples": [
+                                "{department}",
+                                "tell me about {department}"
+                            ]
+                        },
+                        {
+                            "name": "year",
+                            "type": "AMAZON.DATE",
+                            "samples": [
+                                "{year}",
+                                "tell me about {year}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "How much money was spent on {department} in {year}",
+                        "How much money did we spend on {department} in {year}",
+                        "How much money was spent on {department} {year}",
+                        "tell me the money spent on {department} in {year}",
+                        "give me the checkbook for {department} in {year}"
+                    ]
+                },
+                {
+                    "name": "MoneyMetricsIntent",
+                    "slots": [
+                        {
+                            "name": "amount_type",
+                            "type": "AmountType",
+                            "samples": [
+                                "{amount_type}",
+                                "department that spent {amount_type} money",
+                                "tell me about  {amount_type} money"
+                            ]
+                        },
+                        {
+                            "name": "year",
+                            "type": "AMAZON.DATE",
+                            "samples": [
+                                "{year}",
+                                "tell me about {year}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "What department did we spend the {amount_type} money on in {year}",
+                        "What department was the {amount_type} expensive in {year}"
+                    ]
+                },
+                {
+                    "name": "VendorMetricsIntent",
+                    "slots": [
+                        {
+                            "name": "amount_type",
+                            "type": "AmountType",
+                            "samples": [
+                                "{amount_type}",
+                                "vendor that spent {amount_type} money",
+                                "tell me about  {amount_type} money"
+                            ]
+                        },
+                        {
+                            "name": "year",
+                            "type": "AMAZON.DATE",
+                            "samples": [
+                                "{year}",
+                                "tell me about {year}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "Which vendor did we spend the {amount_type} money on in {year}",
+                        "Which vendor was the {amount_type} paid in {year}"
+                    ]
+                },
+                {
+                    "name": "AMAZON.RepeatIntent",
+                    "samples": []
+                },
+                {
+                    "name": "DepartmentActivityMetricsIntent",
+                    "slots": [
+                        {
+                            "name": "department",
+                            "type": "Department",
+                            "samples": [
+                                "i would like to know about {department}",
+                                "{department}"
+                            ]
+                        },
+                        {
+                            "name": "amount_type",
+                            "type": "AmountType",
+                            "samples": [
+                                "lets go with {amount_type}",
+                                "{amount_type}"
+                            ]
+                        },
+                        {
+                            "name": "year",
+                            "type": "AMAZON.DATE",
+                            "samples": [
+                                "{year}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "{amount_type} spent activity by {department} in {year}",
+                        "Which activity did {department} spend {amount_type} amount in {year}"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "Department",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "all departments"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fire services"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "planning and development",
+                                "synonyms": [
+                                    "development",
+                                    "planning"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "human resources"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "public works"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "city wide"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "community services"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "operations and maintenance",
+                                "synonyms": [
+                                    "maintenance",
+                                    "operations",
+                                    "operations and maintenance"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "AmountType",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "most"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "least"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "MoneySpentIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "department",
+                            "type": "Department",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.30226994380.1279812459759"
+                            }
+                        },
+                        {
+                            "name": "year",
+                            "type": "AMAZON.DATE",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.30226994380.387692232897"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "MoneyMetricsIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "amount_type",
+                            "type": "AmountType",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.384767077396.402941457750"
+                            }
+                        },
+                        {
+                            "name": "year",
+                            "type": "AMAZON.DATE",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.384767077396.827521894608"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "VendorMetricsIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "amount_type",
+                            "type": "AmountType",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.399939845985.304363555452"
+                            }
+                        },
+                        {
+                            "name": "year",
+                            "type": "AMAZON.DATE",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.399939845985.983134697128"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "DepartmentActivityMetricsIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "department",
+                            "type": "Department",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.171412303142.1429053838490"
+                            }
+                        },
+                        {
+                            "name": "amount_type",
+                            "type": "AmountType",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.171412303142.980886385191"
+                            }
+                        },
+                        {
+                            "name": "year",
+                            "type": "AMAZON.DATE",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.910581669473.53974241880"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "delegationStrategy": "ALWAYS"
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.30226994380.1279812459759",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "What department would you like to get the information for. You can say fire services, operations and maintenance, or planning and development?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.30226994380.387692232897",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "what year would you like to get the information for?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.384767077396.402941457750",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Would you like to get the information for most money spent or least money spent?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.384767077396.827521894608",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "what year would you like to get the information for?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.399939845985.304363555452",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Would you like to know the least paid or most paid vendor ?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.399939845985.983134697128",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "which year?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.171412303142.1429053838490",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Which department?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.171412303142.980886385191",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "least or most ?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.910581669473.53974241880",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "which year?"
+                    }
+                ]
+            }
+        ]
+    }
+}
