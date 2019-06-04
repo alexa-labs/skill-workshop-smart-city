@@ -172,7 +172,13 @@ const LaunchRequestHandler = {
 };
 ```
 
-6. Update the response for `HelpIntentHandler`
+6. Update the response for `HelpIntentHandler` by updating `speechtext`.
+
+```js
+const speechText = 'You can ask how much money was spent by the City of Las Vegas on a department in a certain year. Here are a few departments you can ask about - fire services, planning and development, operations and maintenance, What would you like to know?';
+```
+
+Here's what the final code for HelpIntentHandler should look like after the change.
 
 ```js
 const HelpIntentHandler = {

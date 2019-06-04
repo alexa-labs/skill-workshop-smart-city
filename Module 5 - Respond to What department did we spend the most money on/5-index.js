@@ -36,7 +36,7 @@ const MoneySpentIntentHandler = {
 
 			if (response.length > 0) {
 				let expenditureSum = response.reduce((total, expenditure) => total + expenditure.transaction_amount * 1, 0);
-				speechText = `So in ${slotValues.year.resolved}, $${expenditureSum.toFixed(2)} was spent on ${slotValues.department.resolved}`;
+				speechText = `So in ${slotValues.year.resolved}, $${expenditureSum.toFixed(2)} was spent on ${slotValues.department.resolved}. What other department would you like to know about?`;
 			} else {
 				speechText = `I am sorry I could not find any info
             for ${slotValues.department.resolved} spending in
@@ -108,9 +108,9 @@ const MoneyMetricsIntentHandler = {
 				console.log('Least money spent on ' + least_spend['department'] + ' amounting to ' + least_spend['amount_spent']);
 
 				if (slotValues.amount_type.resolved === 'most') {
-					speechText = `So in ${slotValues.year.resolved}, the most money was spent in the ${highest_spend['department']} department, with a total of $${highest_spend['amount_spent']}.`;
+					speechText = `So in ${slotValues.year.resolved}, the most money was spent in the ${highest_spend['department']} department, with a total of $${highest_spend['amount_spent']}. What other year would you like to know about?`;
 				} else {
-					speechText = `So in ${slotValues.year.resolved}, the least money was spent in the ${least_spend['department']} department, with a total of $${least_spend['amount_spent']}.`;
+					speechText = `So in ${slotValues.year.resolved}, the least money was spent in the ${least_spend['department']} department, with a total of $${least_spend['amount_spent']}. What other year would you like to know about?`;
 				}
 			} else {
 				speechText = `I am sorry I could not find any info for spending in ${slotValues.year.resolved}.`;

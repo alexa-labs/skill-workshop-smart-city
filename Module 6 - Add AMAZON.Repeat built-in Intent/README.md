@@ -69,7 +69,7 @@ const MoneySpentIntentHandler = {
 
 			if (response.length > 0) {
 				let expenditureSum = response.reduce((total, expenditure) => total + expenditure.transaction_amount * 1, 0);
-				speechText = `So in ${slotValues.year.resolved}, $${expenditureSum.toFixed(2)} was spent on ${slotValues.department.resolved}`;
+				speechText = `So in ${slotValues.year.resolved}, $${expenditureSum.toFixed(2)} was spent on ${slotValues.department.resolved}. What other department would you like to know about?`;
 			} else {
 				speechText = `I am sorry I could not find any info
             for ${slotValues.department.resolved} spending in
@@ -104,7 +104,7 @@ const RepeatIntentHandler = {
 	handle(handlerInput) {
 		//Retrieving last speech response from session attributes
 		let sessionAttributes = handlerInput.attributesManager.getSessionAttributes();
-		const speechText = sessionAttributes['last_response'] + '. How can I help?';
+		const speechText = sessionAttributes['last_response'];
 
 		return handlerInput.responseBuilder
 			.speak(speechText)
